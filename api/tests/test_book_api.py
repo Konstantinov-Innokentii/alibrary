@@ -33,7 +33,7 @@ class CreateBookTests(APITestCase):
         url = reverse('book-list')
         data = {'title': 'Django for beginners', 'author': 'William Wincent'}
         response = self.client.post(url, data, format='json')
-        self.assertEqual(response.status_code, status.HTTP_500_INTERNAL_SERVER_ERROR)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 
 class GetBookTests(APITestCase):

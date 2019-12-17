@@ -3,12 +3,12 @@ from rest_framework import viewsets
 from django.http import HttpResponse
 from django.db import IntegrityError
 from django.utils import timezone
-from rest_framework.exceptions import APIException
 from rest_framework.decorators import api_view
 
 from library.models import Book, Reader
 from api.serializers.serializers import BookSerializer, ReaderSerializer, BookNestedSerializer
 from api.serializers.mixins import ReadWriteSerializerMixin
+from api.exceptions import BadRequest
 
 
 class BookViewSet(ReadWriteSerializerMixin, viewsets.ModelViewSet):
@@ -20,7 +20,7 @@ class BookViewSet(ReadWriteSerializerMixin, viewsets.ModelViewSet):
         try:
             return super().create(request, *args, **kwargs)
         except IntegrityError as exc:
-            raise APIException(detail=exc)
+            raise BadRequest(detail='Integrity error')
 
 
 class ReaderViewSet(viewsets.ModelViewSet):
