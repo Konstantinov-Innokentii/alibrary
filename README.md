@@ -10,13 +10,15 @@ After cloning the repo, add file  **`.env.dev`** to the root of project:
     SECRET_KEY=MySecretKey
     DEBUG=True
     SQL_ENGINE=django.db.backends.postgresql
-    SQL_DATABASE=MyDatabase
-    SQL_USER=MyUser
-    SQL_PASSWORD=MyPassword
+    SQL_DATABASE=library
+    SQL_USER=user
+    SQL_PASSWORD=qwerty
     SQL_HOST=db
     SQL_PORT=5432
 
-**Change** **`SECRET_KEY`** and DB credentials
+**Change** **`SECRET_KEY`** .
+
+If it is needed you can change DB credentials. Don't forger to change it in docker-compose too.
 
 **Note** that if you set:
 
@@ -39,7 +41,7 @@ Run docker container with:
     
 ## Usage
 
-You cand find list of api methods at **`/swagger-docs`**
+You can find list of api methods at **`/swagger-docs`**
 
 1.There you can test not only session Authentication, but also JWT auth token. To do this click on the Authorize and insert as a value:
       
