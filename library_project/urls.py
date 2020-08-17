@@ -29,3 +29,5 @@ urlpatterns = [
     path('api/v1/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('swagger-docs/', schema_view),
 ]
+
+urlpatterns += [path('silk/', include('silk.urls', namespace='silk'))]

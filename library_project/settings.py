@@ -47,11 +47,13 @@ INSTALLED_APPS = [
     # 3rd party
 
     'rest_framework',
-    'rest_framework_swagger'
+    'rest_framework_swagger',
+    'silk'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'silk.middleware.SilkyMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -164,3 +166,6 @@ SWAGGER_SETTINGS = {
         }
     },
 }
+
+STATIC_ROOT = './collected_static/'
+STATIC_URL = '/static/'

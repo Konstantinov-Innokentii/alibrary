@@ -12,6 +12,7 @@ djangorestframework = "==3.10.3"
 django-rest-swagger = "==2.1.2"
 pyyaml = "==5.1.2"
 djangorestframework-simplejwt = "==4.3"
+django-silk = "*"
 
 [requires]
 python_version = "3.7"

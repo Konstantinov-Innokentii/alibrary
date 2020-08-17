@@ -34,9 +34,10 @@ Run docker container with:
 
     docker-compose up -d --build
 
-**Don't forget** to apply migrations at first startup and create superuser **after** this:
+**Don't forget** to apply migrations at first startup, collect static and create superuser **after** this:
 
     docker-compose exec web python manage.py migrate
+    docker-compose exec web python manage.py collectstatis
     docker-compose exec web python manage.py createsuperuser
     
 ## Usage
